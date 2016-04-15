@@ -23,11 +23,9 @@ A histogram of loans per year indicates that loans per year may be distributed e
 ![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_hist.png)
 
 Basic splits along the selected segments shows y.
-
-[Micro lending splits](pgr-me.github.io/images/001_microlending_splits.png "Segment Splits")
+![Segment Splits]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_splits.png)
 
 A scatter plot shows x.
 
-[Scatter Plot](pgr-me.github.io/images/001_microlending_scatter.png "Categorical Scatter Plot of Gender and Region")
-
+![Categorical Scatter Plot]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_scatter.png)
 A 

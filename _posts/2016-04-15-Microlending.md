@@ -15,9 +15,19 @@ Kiva helpfully provides lender, loan, and borrower data through [its API](https:
 
 ![Summary of methodology]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_methods.png)
 
-I downloaded 1,860 json files, each containing 1,000 lender records. each record included name, occupation, location, reason for lending, number of loans, and Kiva join date. IAfter training my model on various trial feature sets, I decided to include the following in my final feature set: gender, region, tech involvement, and lending. I deduced gender from name data and aggregated location into two categories: 1) United States & Canada and 2) the rest of the world. I derived tech involvement from occupation, and took the string length of lending reason as a gauge to test a given lender's enthusiasm. 
+I downloaded 1,860 json files, each containing 1,000 lender records. each record included name, occupation, location, reason for lending, number of loans, and Kiva join date. After training my model on various trial feature sets, I decided to include the following in my final feature set: gender, region, tech involvement, and lending. I deduced gender from name data and aggregated location into two categories: 1) United States & Canada and 2) the rest of the world. I derived tech involvement from occupation, and took the string length of lending reason as a gauge to test a given lender's enthusiasm. 
 
 ## Analysis
 
-A histogram of loans per year indicates that loans per year may be distributed exponentially.
+A histogram of loans per year indicates that loans per year may be distributed exponentially, with most lenders making just a few loans  in a typical year. The mean loans per year was x with a standard deviation of y.
 ![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_hist.png)
+
+Basic splits along the selected segments shows y.
+
+[Micro lending splits](pgr-me.github.io/images/001_microlending_splits.png "Segment Splits")
+
+A scatter plot shows x.
+
+[Scatter Plot](pgr-me.github.io/images/001_microlending_scatter.png "Categorical Scatter Plot of Gender and Region")
+
+A 

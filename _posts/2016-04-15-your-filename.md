@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Who are microlenders?
 
@@ -13,6 +13,3 @@ Below is a depiction of the methodology an workflow that I employed to complete 
 
 A histogram of loans per year indicates that loans per year may be distributed exponentially.
 ![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_hist.png)
-
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.

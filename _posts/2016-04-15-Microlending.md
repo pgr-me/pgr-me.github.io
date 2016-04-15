@@ -28,4 +28,7 @@ Basic splits along the selected segments shows y.
 A scatter plot shows x.
 
 ![Categorical Scatter Plot]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_scatter.png)
-A 
+
+The statistical results are shown below.
+
+![Categorical Scatter Plot]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_regstats.png)

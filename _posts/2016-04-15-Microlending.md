@@ -38,6 +38,7 @@ The statistical results are shown below. The R-squared value is low, and so the 
 ## Conclusions and Next Steps
 
 This is a preliminary analysis, and more insights could be gleaned from the Kiva data. Even so, we can draw the following conclusions from this analysis:
+
 - Microlending activity across microlenders seems to be exponentially distributed;
 - While the model developed for this analysis is not predictive, it does explain a subset of the types of people that tends to make more microloans;
 - Within the sample data, males and people living outside the US and Canada tend to be more active microlenders; and,

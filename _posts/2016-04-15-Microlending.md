@@ -1,4 +1,6 @@
 ---
+layout: post
+title: Loan activity among microlenders
 published: true
 ---
 ## Who are microlenders?

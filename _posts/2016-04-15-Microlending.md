@@ -3,7 +3,6 @@ layout: post
 title: Loan activity among microlenders
 published: true
 ---
-## Microlending as a Service for the Unbanked
 
 There are an estimated [2 billion](http://www.cgap.org/about/faq/who-are-2-billion-unbanked-adults-globally) unbanked adults who lack access to traditional financial services, including credit. Microloans are small loans that provide credit to these lower-income, typically unbanked borrowers. Using platforms like Kiva, individuals can become microlenders and connect to borrowers in other parts of the world. Since Kiva was founded in 2005, 1.4 million lenders have issued $840 million in loans across [84 different countries](https://www.kiva.org/about). Other companies and non-profits have taken notice, and are moving into the microlending space. 
 

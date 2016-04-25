@@ -23,26 +23,22 @@ It's worth pointing out that the budget data I obtained from The Numbers likely 
 ![Methodology]({{site.baseurl}}/pgr-me.github.io/images/002-horror_movies-pmf.png)
 
 
-
-The chart below shows that Kiva users tend to be based in the US and male. Additionaly, almost 20% of the sample is involved in the tech industry or sciences.
+The regression stats below show xyz.
 
 ![Regression Stats]({{site.baseurl}}/pgr-me.github.io/images/002-horror_movies-regstats.png)
 
-I wanted to get an idea of the sample distribution by category, and so I created the chart below using [Seaborn](https://stanford.edu/~mwaskom/software/seaborn/). We can see that the distribution of people from the US and Canada seems to be more concentrated at the lower end of loans per year axis than those in the rest of the world. In addition, high loans per year outliers are primarily male.
-
-![Categorical Scatter Plot]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_scatter.png)
-
-The statistical results are shown below. The R-squared value is low, and so the model's predictive power is nil. However, p values for the gender, region, invites per year, and lending reason features are low enough that we can reject the null hypothesis that these features have no impact on lending activity.
-
-![Regression Statistics]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_regstats.png)
-
 ## Conclusions and Next Steps
 
-This is a preliminary analysis, and more insights could be gleaned from the Kiva data. Even so, we can draw the following conclusions from this analysis:
+Further analysis is needed before we can conclude more about B movies in particular. Even so, below are features of of statistical significance:
+- There is a slightly negative correlation between budget and profit margin among all surveyed horror movies, owing perhaps to the wild success of B horror movies
+- There is a positive correlation between meta score and profit margin, which makes sense intuitively
+Don’t leave out the outliers because that’s what I’m most interested in here!!
+- Things I didn’t expect / was surprised by:
+- Lasso LARS method did not find significant correlation between users’ scores and profit margin
+- The lack of budget data on The Numbers site really limited my sample size
 
-- Microlending activity across microlenders seems to be exponentially distributed;
-- While the model developed for this analysis is not predictive, it does explain a subset of the types of people that tends to make more microloans;
-- Within the sample data, males and people living outside the US and Canada tend to be more active microlenders; and,
-- More analysis is needed before we can say the same for people involved in tech and the sciences.
-
-Further analysis may show that the selected features for this model should be refined, removed, or added. With a more predictive model, I could move on to test the training data with test data to see if model is over or under fitted.
+Going forward:
+- Bigger sample size would make analysis more robust
+- Normalize variables like year (thanks Hyatt!)
+- This would give us a more complete picture of the profit margins of horror movies in general and B horror movies in particular
+- Include other features such as ratings, directors, actors, etc.

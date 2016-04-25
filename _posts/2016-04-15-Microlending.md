@@ -10,7 +10,7 @@ One of these organizations – [Seeds](http://playseeds.com) – asked me to inv
 
 ## Methodology
 
-Kiva helpfully provides lender, loan, and borrower data through [its API](https://build.kiva.org). From the API, I downloaded a data snapshot of json files, and sampled this data to see if demographic data provided in the sample data was related to the average number of loans that Kiva users make per year. Below is a depiction of the methodology an workflow that I employed to complete this analysis. 
+Kiva helpfully provides lender, loan, and borrower data through [its API](https://build.kiva.org). From the API, I downloaded a data snapshot of json files, and sampled this data to see if demographic data provided in the sample data was related to the average number of loans that Kiva users make per year. Below is a depiction of the methodology and workflow that I employed to complete this analysis. 
 
 ![Summary of methodology]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-methods.png)
 

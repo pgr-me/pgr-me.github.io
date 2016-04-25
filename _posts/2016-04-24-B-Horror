@@ -1,30 +1,32 @@
 ---
 layout: post
-title: Profitability of horror movies
+title: Profit margins of horror movies
 published: false
 ---
 
-There are an estimated [2 billion](http://www.cgap.org/about/faq/who-are-2-billion-unbanked-adults-globally) unbanked adults who lack access to traditional financial services, including credit. Microloans are small loans that provide credit to these lower-income, typically unbanked borrowers. Using platforms like Kiva, individuals can become microlenders and connect to borrowers in other parts of the world. Since Kiva was founded in 2005, 1.4 million lenders have issued $840 million in loans across [84 different countries](https://www.kiva.org/about). Other companies and non-profits have taken notice, and are moving into the microlending space. 
-
-One of these organizations – [Seeds](http://playseeds.com) – asked me to investigate the following question: who are microlenders?
+Among movie genres, horror stands out for the relatively high number of low budget films that have become blockbusters. These low budget movies are often categorized as B Movies, which Wikipedia (get link) defines as low budget, non-arthouse films. For this analysis, I wanted to see what factors - in particular budget - impact the profit margin of horror movies. 
 
 ## Methodology
 
-Kiva helpfully provides lender, loan, and borrower data through [its API](https://build.kiva.org). From the API, I downloaded a data snapshot of json files, and sampled this data to see if demographic data provided in the sample data was related to the average number of loans that Kiva users make per year. Below is a depiction of the methodology an workflow that I employed to complete this analysis. 
+I broke up this analysis into data acquisition and analysis phases. I scraped data from [The Numbers](http://the-numbers.com/) and [Box Office Mojo](http://boxofficemojo.com/) using Beautiful Soup and Selenium. From these websites, I obtained my feature data: budget, domestic and international box office revenues, release date, and meta critic and user scores. I also deduced whether the movies were sequels or not. 
 
-![Summary of methodology]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_methods.png)
+I performed a Lasso LARS analysis on the features to see which ones were of significance and which could be dropped. The Lasso LARS analysis showed that only budget, release year, and meta critic scores should be retained. This initially surprised me because I thought that meta user scores in particular would be a key feature. Looking back it makes sense that user scores - which correlate with critic scores - would be removed. This is because Lasso - when given two features that are highly correlated - will only select one and drop the other. I'm still not sure why sequels / remakes were not features of significance, and would need to look into this further if I do another analysis on this topic.
 
-I downloaded 1,860 json files, each containing 1,000 lender records. each record included name, occupation, location, reason for lending, number of loans, and Kiva join date. After training my model on various trial feature sets, I decided to include the following in my final feature set: gender, region, tech involvement, reason for lending, and invites sent to other users. I deduced gender from name data and aggregated location into two categories: 1) United States & Canada and 2) the rest of the world. I derived tech involvement from occupation, and took the string length of lending reason as a gauge to test a given lender's enthusiasm. 
+![Methodology]({{site.baseurl}}/pgr-me.github.io/images/002-horror_movies-methodology.png)
 
 ## Analysis
 
-A histogram of loans per year indicates that loans per year may be distributed exponentially, with most lenders making just a few loans  in a typical year. Within the sample, the mean loans per year was about 4 per year with a standard deviation of 12.
+The histogram of profit margins includes overlays of movies. Duds like Idle Hands (which I thoroughly enjoyed by the way) had zero or negative margins, while blockbusters like Carrie and the Exorcist were at x and y, respectively. The first Friday the 13th had a margin of 100, meaning that its profit was 100 times more than its production buffet. I guess that's why they made a gazillion sequels. I generated a histogram of profit margins for the 165 movies I had complete data for. Predictably, the data followed an exponential distribution, meaning most movies had lower profit margins - with an average of 20 - with a few movies having outstanding profit margins. 
 
-![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_hist.png)
+It's worth pointing out that the budget data I obtained from The Numbers likely doesn't include marketing and other costs, meaning the profit margin numbers reported in this analysis may be significantly over-estimated.
+
+![Methodology]({{site.baseurl}}/pgr-me.github.io/images/002-horror_movies-pmf.png)
+
+
 
 The chart below shows that Kiva users tend to be based in the US and male. Additionaly, almost 20% of the sample is involved in the tech industry or sciences.
 
-![Segment Splits]({{site.baseurl}}/pgr-me.github.io/images/001_microlending_splits.png)
+![Regression Stats]({{site.baseurl}}/pgr-me.github.io/images/002-horror_movies-regstats.png)
 
 I wanted to get an idea of the sample distribution by category, and so I created the chart below using [Seaborn](https://stanford.edu/~mwaskom/software/seaborn/). We can see that the distribution of people from the US and Canada seems to be more concentrated at the lower end of loans per year axis than those in the rest of the world. In addition, high loans per year outliers are primarily male.
 

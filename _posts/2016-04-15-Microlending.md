@@ -43,4 +43,4 @@ This is a preliminary analysis, and more insights could be gleaned from the Kiva
 - Within the sample data, males and people living outside the US and Canada tend to be more active microlenders; and,
 - More analysis is needed before we can say the same for people involved in tech and the sciences.
 
-Further analysis may show that the selected features for this model should be refined, removed, or added. With a more predictive model, I could move on to test the training data with test data to see if model is over or under fitted.
+Further analysis may show that the selected features for this model should be refined, removed, or added. With a more predictive model, I could move on to test the training data with test data to see if model is over or under fitted. Check out my [code](https://github.com/pgr-me/metis_projects/tree/master/microlending) on Github.

@@ -18,25 +18,18 @@ I performed [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) on articles g
 
 ![PCA results]({{site.baseurl}}/pgr-me.github.io/images/004-marijuana-pca.png)
 
-The chart below shows that Kiva users tend to be based in the US and male. Additionaly, almost 20% of the sample is involved in the tech industry or sciences.
+The next step of the analysis was to use the top two PCA dimensions to perform the cluster analysis. I generated a cosine similarity matrix to map the relatedness of the terms within each 5-year text chunk to one another. From that, I was able to identify two intelligible clusters. 
 
-![Segment Splits]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-splits.png)
+The first intelligible cluster ranged from about 1970 to 1990. Key words included paraquat, a herbicide used to eradicate illicit marijuana crops, Noriega, a corrupt Panamanian general involved in the drug trade, and terms related to enforcement of marijuana laws. These terms make sense given the historical context, when the federal and state governments adopted increasingly strict enforcement policies to limit marijuana consumption and trafficking. Public sentiment on legalizing marijuana correlated with these policies, as the vast majority of Americans opposed legalization. 
 
-I wanted to get an idea of the sample distribution by category, and so I created the chart below using [Seaborn](https://stanford.edu/~mwaskom/software/seaborn/). We can see that the distribution of people from the US and Canada seems to be more concentrated at the lower end of loans per year axis than those in the rest of the world. In addition, high loans per year outliers are primarily male.
+The second intelligible cluster ranged from the late 2000s to the present, and included key terms like recreational marijuana. During this time, multiple states have decided to decriminalize and legalize recreational marijuana consumption as Americans have become more supportive of legalizing recreational use of the drug.
 
-![Categorical Scatter Plot]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-scatter.png)
+I was not able to identify any clusters from about 1990 up through the late 2000s, which was perhaps due to an issue with [stop words](https://en.wikipedia.org/wiki/Stop_words) that I did not catch earlier in the analysis.
 
-The statistical results are shown below. The R-squared value is low, and so the model's predictive power is nil. However, p values for the gender, region, invites per year, and lending reason features are low enough that we can reject the null hypothesis that these features have no impact on lending activity.
+The figure below overlays key words from the two clusters I identified and public sentiment on legalizing marijuana.
 
-![Regression Statistics]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-regstats.png)
+![Key words and sentiment on legalization]({{site.baseurl}}/pgr-me.github.io/images/004-marijuana-sentiment.png)
 
-## Conclusions and Next Steps
+## Conclusions
 
-This is a preliminary analysis, and more insights could be gleaned from the Kiva data. Even so, we can draw the following conclusions from this analysis:
-
-- Microlending activity across microlenders seems to be exponentially distributed;
-- While the model developed for this analysis is not predictive, it does explain a subset of the types of people that tends to make more microloans;
-- Within the sample data, males and people living outside the US and Canada tend to be more active microlenders; and,
-- More analysis is needed before we can say the same for people involved in tech and the sciences.
-
-Further analysis may show that the selected features for this model should be refined, removed, or added. With a more predictive model, I could move on to test the training data with test data to see if model is over or under fitted. Check out my [code](https://github.com/pgr-me/metis_projects/tree/master/microlending) on Github.
+In sum, the pre-processing and clustering approach I used succeeded in identifying two intelligible clusters. Words associated with marijuana from 1990 to 1970 were related to crime, enforcement, prevention. Then, stories on marijuana shifted toward decriminalization, legalization, and recreational marijuana use as public support for legalization increased.

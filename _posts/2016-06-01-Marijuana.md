@@ -8,15 +8,13 @@ The legality of and public's view towards marijuana is rapidly [changing](http:/
 
 ## Methodology
 
-I developed a two-step approach to to try to answer this question. First, I wanted to identify distinct eras characterized by the use of key words associated with marijuana. Second, I aimed to assess whether words in each era represented larger themes regarding the public's view toards marijuana and the the drug's legality.
+I developed a two-step approach to to try to answer this question. First, I wanted to identify distinct eras characterized by the use of key words associated with marijuana. Second, I aimed to assess whether words in each era represented larger themes regarding the public's view toards marijuana and the the drug's legality. I summarize the methodology I used below.
 
 ![Summary of methodology]({{site.baseurl}}/pgr-me.github.io/images/004-marijuana-methodology.png)
 
-I downloaded 1,860 json files, each containing 1,000 lender records. each record included name, occupation, location, reason for lending, number of loans, and Kiva join date. After training my model on various trial feature sets, I decided to include the following in my final feature set: gender, region, tech involvement, reason for lending, and invites sent to other users. I deduced gender from name data and aggregated location into two categories: 1) United States & Canada and 2) the rest of the world. I derived tech involvement from occupation, and took the string length of lending reason as a gauge to test a given lender's enthusiasm. 
-
 ## Analysis
 
-A histogram of loans per year indicates that loans per year may be distributed exponentially, with most lenders making just a few loans  in a typical year. Within the sample, the mean loans per year was about 4 per year with a standard deviation of 12.
+I performed a performing [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) on articles grouped into 5-year chunks of text in order to identify the most important words in each 5-year chunk. The resulting feature set was 1.1 million n-grams, or 1.1 million dimensions(!). To avoid the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) that occurs when clustering higher dimensional datasets, I conducted a [principal component analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) to reduce the dimensionality of the feature set. 
 
 ![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-hist.png)
 

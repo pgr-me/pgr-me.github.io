@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Loan activity among microlenders
+title: Marijuana through the lens of the New York Times
 published: true
 ---
 

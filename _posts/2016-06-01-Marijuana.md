@@ -14,9 +14,9 @@ I developed a two-step approach to to try to answer this question. First, I want
 
 ## Analysis
 
-I performed a performing [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) on articles grouped into 5-year chunks of text in order to identify the most important words in each 5-year chunk. The resulting feature set was 1.1 million n-grams, or 1.1 million dimensions(!). To avoid the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) that occurs when clustering higher dimensional datasets, I conducted a [principal component analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) to reduce the dimensionality of the feature set. 
+I performed [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) on articles grouped into 5-year chunks of text in order to identify the most important words in each 5-year chunk. The resulting feature set was 1.1 million n-grams, or 1.1 million dimensions(!). To avoid the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) that occurs when one attempts to cluster higher dimensional datasets, I conducted a [principal component analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) to reduce the dimensionality of the feature set. The PCA results are below. I found that two components yielded the most intelligible clusters, and so used two dimensions to carry out the rest of the analysis.
 
-![Distribution of lender loan activity]({{site.baseurl}}/pgr-me.github.io/images/001-microlending-hist.png)
+![PCA results]({{site.baseurl}}/pgr-me.github.io/images/004-marijuana-pca.png)
 
 The chart below shows that Kiva users tend to be based in the US and male. Additionaly, almost 20% of the sample is involved in the tech industry or sciences.
 

@@ -32,4 +32,4 @@ The figure below overlays key words from the two clusters I identified and publi
 
 ## Conclusions
 
-In sum, the pre-processing and clustering approach I used succeeded in identifying two intelligible clusters. Words associated with marijuana from 1990 to 1970 were related to crime, enforcement, prevention. Then, stories on marijuana shifted toward decriminalization, legalization, and recreational marijuana use as public support for legalization increased.
+In sum, the pre-processing and clustering approach I used succeeded in identifying two intelligible clusters. Words associated with marijuana from 1990 to 1970 were related to crime, enforcement, prevention. Then, stories on marijuana shifted toward decriminalization, legalization, and recreational marijuana use as public support for legalization increased. Check out my code on [Github](https://github.com/pgr-me/metis_projects/tree/master/fletcher) to see the full analysis!

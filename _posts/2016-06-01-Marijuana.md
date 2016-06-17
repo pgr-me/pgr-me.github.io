@@ -30,4 +30,4 @@ Next, I wanted to overlay the top twenty words from each cluster and public sent
 
 ## Conclusions
 
-In sum, the pre-processing and clustering approach I used succeeded in identifying two intelligible clusters. For the latter half of the 20th century, words associated with marijuana tended to relate to crime, enforcement, and prevention. In the 90s and 2000s, stories on marijuana shifted toward decriminalization, legalization, and recreational marijuana use as public support for legalization increased. Check out my code on [Github](https://github.com/pgr-me/metis_projects/tree/master/fletcher) to see the full analysis!
+In sum, the pre-processing and clustering approach I used succeeded in identifying two intelligible clusters. For the latter half of the 20th century, words associated with marijuana tended to relate to crime, enforcement, and prevention. In the 90s and 2000s, stories on marijuana shifted toward decriminalization, legalization, and recreational marijuana use as public support for legalization increased. Check out my code on [Github](https://github.com/pgr-me/metis_projects/tree/master/04-marijuana) to see the full analysis!
